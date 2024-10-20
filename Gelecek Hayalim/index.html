@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gelecek Hayalim - Kadınların Gücü</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="menu-btn" id="menuBtn">
+            <div class="menu-icon"></div>
+        </div>
+    
+        <div class="menu-overlay" id="menuOverlay">
+            <div class="close-btn" id="closeBtn">&times;</div>
+            <ul class="menu-list">
+                <li><a href="#harita">01 HARİTA</a></li>
+                <li><a href="#basari">02 BAŞARILI TÜRK KADINLARI</a></li>
+                <li><a href="#ilkler">03 İLKLERE İMZA ATMIŞ TÜRK KADINLARI</a></li>
+                <li><a href="#sözler">04 İLHAM VEREN SÖZLER</a></li>
+                <li><a href="#oran">05 ORANLAR</a></li>
+            </ul>
+        </div>
+
+        <header class="header">
+            <div class="logo-box">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" style="fill: white ;transform: msFilter;">
+                    <path d="M12 2C8.691 2 6 4.691 6 8c0 2.967 2.167 5.432 5 5.91V17H8v2h3v2.988h2V19h3v-2h-3v-3.09c2.833-.479 5-2.943 5-5.91 0-3.309-2.691-6-6-6zm0 10c-2.206 0-4-1.794-4-4s1.794-4 4-4 4 1.794 4 4-1.794 4-4 4z"></path></svg>
+            </div>
+
+            <div class="text-box">
+                <h1 class="heading-primary">
+                    <span class="heading-primary-main">Kadınların</span>
+                    <span class="heading-primary-sub">Gücü</span>
+                </h1>
+            </div>
+        </header>
+
+        <h2 class="heading-secondary">Günümüz Teknolojisine Fayda Sağlamış Kadınlarımız</h2>
+        
+        <div class="map-container" id="harita">
+            <img src="img/kıtalar2.png" usemap="#worldmap" alt="Dünya Haritası" class="world-map" id="main-map">
+            
+            <div class="zoom-preview" id="zoom-preview-na" style="display: none; top: 140%; left: 30%; width: 800px;",>
+                <img src="img/kuzey-amerika.png" alt="yakınlaştırılmış kuzey amerika" class="zoomed-map" id="zoomed-na">
+            </div>
+
+            <div class="zoom-preview" id="zoom-preview-sa" style="display: none; top: 170%; left: 35%; width: 450px;">
+                <img src="img/guney-amerika.png" alt="yakınlaştırılmış guney amerika" class="zoomed-map" id="zoomed-sa">
+            </div>
+
+            <div class="zoom-preview" id="zoom-preview-af" style="display: none; top: 170%; left: 50%; width: 600px;">
+                <img src="img/afrika.png" alt="yakınlaştırılmış afrika" class="zoomed-map" id="zoomed-af">
+            </div>
+
+            <div class="zoom-preview" id="zoom-preview-av" style="display: none; top: 150%; left: 50%; width: 600px;">
+                <img src="img/avrupa.png" alt="yakınlaştırılmış avrupa" class="zoomed-map" id="zoomed-av">
+            </div>
+
+            <div class="zoom-preview" id="zoom-preview-as" style="display: none; top: 150%; left: 75%; width: 800px;">
+                <img src="img/asya.png" alt="yakınlaştırılmış asya" class="zoomed-map" id="zoomed-as">
+            </div>
+
+            <div class="zoom-preview" id="zoom-preview-o" style="display: none; top: 170%; left: 75%; width: 800px;">
+                <img src="img/okyanusya.png" alt="yakınlaştırılmış okyanusya" class="zoomed-map" id="zoomed-o">
+            </div>
+
+            <map name="worldmap">
+                <area target="" alt="kuzey-amerika" title="kuzey-amerika" href="" coords="141,242,146,254,156,257,165,264,152,265,138,272,142,282,152,282,160,279,142,302,149,313,159,320,170,326,162,340,145,350,139,361,166,351,184,341,193,324,204,317,223,312,238,327,249,333,264,341,278,365,289,380,295,391,300,404,300,432,306,449,312,467,314,481,327,490,336,508,344,525,355,548,367,551,377,559,387,572,392,579,402,583,412,583,425,589,435,595,445,602,452,617,467,626,478,617,457,603,461,590,445,579,443,568,447,556,435,556,428,566,413,566,411,555,406,532,413,515,430,514,447,504,459,511,461,527,460,542,470,551,477,556,488,563,510,569,524,569,494,555,476,539,471,525,469,508,476,493,490,477,491,460,500,443,510,432,522,422,529,425,543,419,532,405,525,392,536,388,549,384,559,384,553,397,565,405,577,404,572,389,566,371,555,351,541,333,532,316,532,302,538,281,548,269,559,264,573,272,583,293,599,310,610,316,618,302,623,283,631,269,644,268,655,254,672,248,688,242,683,228,693,221,695,204,700,189,702,173,709,160,705,145,710,128,726,121,727,108,706,109,688,107,693,95,675,90,657,83,633,84,606,88,580,98,551,104,532,98,517,94,491,93,466,94,439,102,420,118,394,132,370,139,351,146,329,156,309,170,303,205,292,219,275,231,261,240,240,235,223,231,206,225,193,221,179,221,163,226" shape="poly" onmouseover="showZoomedImage('zoom-preview-na')" onmouseout="hideZoomedImage('zoom-preview-na')">
+                <area target="" alt="guney-amerika" title="guney-amerika" href="" coords="493,607,487,615,480,625,481,638,481,648,474,658,471,673,467,684,470,700,478,706,480,727,488,734,494,745,504,755,508,769,508,785,507,817,501,858,493,887,495,902,491,919,491,940,494,957,502,965,515,974,527,973,517,957,517,940,524,929,524,916,524,904,532,897,535,881,542,871,552,871,558,857,555,843,566,846,575,840,580,826,587,816,593,805,599,788,610,781,620,776,625,761,630,740,635,721,644,709,645,690,631,682,617,673,603,668,586,668,587,653,579,641,563,631,546,614,527,605,510,600" shape="poly" onmouseover="showZoomedImage('zoom-preview-sa')" onmouseout="hideZoomedImage('zoom-preview-sa')">
+                <area target="" alt="afrika" title="afrika" href="" coords="755,479,748,488,740,500,734,517,726,524,720,537,716,549,716,561,716,580,712,596,722,610,730,626,739,637,751,640,760,640,771,636,781,634,794,634,799,641,808,641,815,653,815,667,816,686,823,694,825,709,829,720,822,736,823,754,829,766,832,778,836,801,840,818,847,835,852,846,863,841,873,842,884,835,894,825,898,812,905,798,915,787,911,774,917,764,927,752,939,753,945,766,945,787,952,795,962,784,966,764,969,737,966,726,960,733,951,742,942,746,936,737,934,722,927,702,928,682,939,670,948,658,953,645,965,636,967,623,969,607,953,606,934,598,925,580,921,567,917,552,910,536,908,523,908,514,908,502,891,502,878,501,869,499,861,492,856,499,850,505,839,501,828,492,818,488,820,475,811,468,791,470,777,473" shape="poly" onmouseover="showZoomedImage('zoom-preview-af')" onmouseout="hideZoomedImage('zoom-preview-af')">
+                <area target="" alt="avrupa" title="avrupa" href="" coords="744,430,744,442,744,454,747,466,754,475,767,469,774,464,777,451,789,442,794,431,805,433,818,437,813,451,820,458,820,445,833,455,828,468,837,464,839,449,830,434,828,423,840,433,849,441,852,454,856,464,867,471,867,455,870,447,878,448,886,444,886,428,890,420,900,411,902,420,915,417,928,407,922,425,931,427,939,431,948,435,959,442,959,431,959,418,970,411,970,399,977,386,987,382,1003,382,1007,369,1006,352,1008,341,1018,325,1023,300,1024,281,1030,261,1033,250,1028,240,1013,236,1000,230,992,222,993,209,1001,195,1010,189,1024,184,1038,174,1040,162,1037,148,1031,128,1027,119,1016,113,994,113,979,113,963,120,960,130,976,131,992,130,1014,124,1013,167,990,188,977,206,983,220,986,229,997,243,984,243,967,242,956,244,942,244,928,246,911,242,894,226,880,218,863,168,876,147,881,134,867,128,850,128,830,131,815,141,823,156,842,173,864,223,850,231,836,240,833,259,823,270,816,279,809,290,799,294,799,310,796,318,804,327,815,322,826,328,815,334,811,346,812,356,801,361,789,371,780,362,774,349,771,334,768,322,726,274,720,263,706,260,690,263,686,274,695,287,707,287,717,284,729,286,740,301,750,315,755,324,751,334,757,342,751,349,743,354,737,362,739,371,747,375,753,366,760,385,765,400,768,409,767,419,757,426" shape="poly" onmouseover="showZoomedImage('zoom-preview-av')" onmouseout="hideZoomedImage('zoom-preview-av')">
+                <area target="" alt="asya" title="asya" href="" coords="876,449,876,460,882,467,891,471,903,473,912,469,912,483,908,493,909,505,910,519,916,529,923,541,927,553,930,565,934,575,937,589,941,596,951,592,967,589,978,583,990,573,1001,565,999,546,991,534,1004,531,1012,535,1025,534,1035,545,1042,553,1050,559,1053,573,1057,587,1062,601,1067,613,1077,627,1084,631,1090,624,1080,610,1083,596,1087,580,1094,566,1107,558,1117,551,1128,560,1138,580,1144,589,1146,606,1149,620,1151,628,1138,628,1145,648,1146,659,1161,679,1170,692,1179,699,1203,709,1220,712,1235,712,1245,722,1252,712,1267,702,1286,708,1303,705,1312,693,1312,674,1291,658,1275,654,1234,647,1241,638,1252,638,1261,627,1259,611,1258,597,1248,583,1247,568,1243,542,1245,527,1247,508,1257,498,1268,508,1282,501,1289,488,1306,484,1313,471,1319,452,1322,436,1334,435,1343,423,1332,411,1327,398,1327,378,1327,364,1323,354,1312,351,1309,341,1316,329,1336,320,1354,317,1370,319,1375,330,1368,343,1370,371,1365,382,1365,395,1378,378,1392,360,1398,345,1399,327,1411,319,1423,314,1439,304,1456,297,1463,282,1466,269,1477,273,1487,280,1501,272,1501,259,1484,252,1473,241,1480,224,1474,207,1449,211,1452,224,1440,231,1423,228,1408,230,1391,230,1382,221,1370,217,1353,208,1340,203,1347,189,1360,181,1344,176,1336,172,1319,170,1305,167,1299,179,1302,191,1305,203,1293,215,1276,213,1271,200,1261,193,1243,193,1224,193,1210,184,1216,174,1206,163,1192,156,1182,146,1175,138,1166,132,1155,125,1149,116,1139,106,1131,114,1124,126,1131,138,1141,143,1141,155,1134,163,1120,170,1107,176,1096,181,1087,197,1076,197,1061,203,1054,196,1044,197,1035,207,1028,222,1035,235,1038,242,1032,256,1027,268,1022,282,1022,300,1018,316,1013,330,1008,347,1010,358,1011,372,1007,381,993,381,981,378,974,392,974,403,976,412,969,420,977,433,983,446,980,454,977,470,964,464,964,452,960,440,942,435,932,437,926,444,915,442,905,436,892,442" shape="poly" onmouseover="showZoomedImage('zoom-preview-as')" onmouseout="hideZoomedImage('zoom-preview-as')">
+                <area target="" alt="okyanusya" title="okyanusya" href="" coords="1317,680,1317,696,1317,706,1317,714,1318,723,1318,736,1317,748,1307,748,1300,736,1300,723,1288,723,1276,723,1273,733,1269,740,1261,733,1252,741,1245,751,1240,765,1228,768,1215,774,1209,781,1206,789,1206,799,1211,812,1216,820,1218,832,1218,842,1219,852,1230,846,1243,844,1254,840,1264,833,1276,832,1286,833,1294,844,1301,853,1310,861,1319,871,1327,874,1327,893,1336,901,1343,890,1346,871,1349,856,1358,832,1366,830,1382,840,1396,854,1406,873,1414,893,1416,907,1414,919,1423,921,1433,911,1442,898,1452,887,1461,873,1452,854,1428,839,1404,829,1372,815,1367,793,1390,785,1416,783,1452,783,1465,764,1468,744,1431,718,1393,696,1359,672,1334,669" shape="poly" onmouseover="showZoomedImage('zoom-preview-o')" onmouseout="hideZoomedImage('zoom-preview-o')">
+            </map>
+        </div>
+
+        <!-- Modallar -->
+        <!-- Kuzey Amerika Modal -->
+        <div id="modal-na" class="modal">
+            <span class="close-button" onclick="closeModal('modal-na')">&times;</span>
+            <div class="modal-content">
+                <h2>Kuzey Amerika'da Teknolojide Öncü Kadınlar</h2>
+                <div class="profile-container">
+                    <!-- İlk kişi -->
+                    <div class="person">
+                        <img src="img/graceHopper.png" alt="Grace Hopper" class="avatar">
+                        <h3>Grace Hopper (ABD)</h3>
+                        <p>Grace Brewster Murray Hopper, Amerikalı bir bilgisayar bilimcisi ve Birleşik Devletler Donanması arka amiraliydi. Harvard Mark I bilgisayarının ilk programcılarından biri, ilk bağlayıcılardan birini icat eden bilgisayar programcılığının öncüsüydü.</p>
+                        <button class="profile-btn" onclick="window.open('https://www.matematiksel.org/grace-hopper-kimdir/', '_blank')">Daha Fazla Bilgi</button>
+                    </div>
+        
+                    <!-- İkinci kişi -->
+                    <div class="person">
+                        <img src="img/radiaPerlman.png" alt="Radia Perlman" class="avatar">
+                        <h3>Radia Perlman (ABD)</h3>
+                        <p>Amerikalı bilgisayar programcısı ve ağ mühendisidir. Perlman, STP teknolojisini icat etmesiyle birlikte “İnternetin Annesi” olarak anılmaya başlanmıştır.   Dr. Perlman, ağ protokolleri ve yöntemleri için 100’den fazla patent topladı. Bunlardan 40’ını Sun Microsystems’deki görev süresi boyunca geliştirdi ve dosyaladı. Sun Microsystems’de geçirdiği sürenin sonunda “Seçkin Mühendis” olarak biliniyordu.</p>
+                        <button class="profile-btn" onclick="window.open('https://tr.wikipedia.org/wiki/Radia_Perlman', '_blank')">Daha Fazla Bilgi</button>
+                    </div>
+        
+                    <!-- Üçüncü kişi -->
+                    <div class="person">
+                        <img src="img/katherineJohnson.jpg" alt="katherine Johnson" class="avatar">
+                        <h3>Katherine Johnson (ABD)</h3>
+                        <p>Creole Katherine Johnson, Amerikalı kadın astrofizikçi, uzay bilimci ve matematikçi. Bir NASA çalışanı olarak yörünge mekaniği hesaplamaları, ilk ve sonraki ABD mürettebatlı uzay uçuşlarının başarısı için kritik öneme sahip Amerikalı bir matematikçiydi</p>
+                        <button class="profile-btn" onclick="window.open('https://www.bbc.com/turkce/haberler-dunya-41281940', '_blank')">Daha Fazla Bilgi</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Güney Amerika Modal -->
+        <div id="modal-sa" class="modal">
+            <span class="close-button" onclick="closeModal('modal-sa')">&times;</span>
+            <div class="modal-content">
+                <h2>Güney Amerika'da Teknolojide Öncü Kadınlar</h2>
+                <div class="profile-container">
+                    <!-- İlk kişi -->
+                    <div class="person">
+                        <img src="img/marianaCostaCheca.png" alt="Mariana Costa Checa" class="avatar">
+                        <h3>Mariana Costa Checa (Peru)</h3>
+                        <p>Mariana Costa Checa (20 Mart 1986 doğumlu) Perulu bir iş kadını ve kar amacı gütmeyen web geliştirme kuruluşu Laboratoria'nın kurucusudur. Sınırlı kaynaklara sahip kadınlara yönelik teknolojik erişim çalışmalarıyla uluslararası alanda takdir görmüştür. 2019 yılında Engie Energy Peru'nun bağımsız direktörü olarak seçilmiştir.</p>
+                        <button class="profile-btn" onclick="window.open('https://en.wikipedia.org/wiki/Mariana_Costa_Checa', '_blank')">Daha Fazla Bilgi</button>
+                    </div>
+        
+                    <!-- İkinci kişi -->
+                    <div class="person">
+                        <img src="img/julianaRotich.jpg" alt="Juliana Rotich" class="avatar">
+                        <h3>Juliana Rotich (Brezilya)</h3>
+                        <p>Aslen Kenyalı olan ancak Brezilya'da çalışmalar yapmış olan Juliana Rotich, yazılım mühendisliği ve teknolojiyle alakalı birçok yenilikçi proje başlatmıştır. Ushahidi adlı, kriz bölgelerinde kullanılan veri haritalama aracının geliştiricilerinden biridir. Teknolojiye olan katkıları Brezilya'da sosyal problemlerin çözümü için de kullanılmaktadır.</p>
+                        <button class="profile-btn" onclick="window.open('https://www.lemelson.org/juliana-rotich/', '_blank')">Daha Fazla Bilgi</button>
+                    </div>
+        
+                    <!-- Üçüncü kişi -->
+                    <div class="person">
+                        <img src="img/carreirapaulabellizia.png" alt="Paula Bellizia" class="avatar">
+                        <h3>Paula Bellizia (Brezilya)</h3>
+                        <p>Paula Bellizia, Microsoft Brezilya’nın CEO’su olarak teknoloji sektöründe dikkat çeken liderlerden biridir. Brezilya'da teknolojinin yaygınlaşması ve dijitalleşmenin hızlanmasında önemli bir rol oynamıştır. Kadınların teknoloji dünyasında daha fazla yer almasını teşvik eden girişimlerde yer almıştır.</p>
+                        <button class="profile-btn" onclick="window.open('https://www.weforum.org/people/paula-bellizia/', '_blank')">Daha Fazla Bilgi</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Afrika Modal -->
+        <div id="modal-af" class="modal">
+            <span class="close-button" onclick="closeModal('modal-af')">&times;</span>
+            <div class="modal-content">
+                <h2>Afrika'da Teknolojide Öncü Kadınlar</h2>
+                <div class="profile-container">
+                    <!-- İlk kişi -->
+                    <div class="person">
+                        <img src="img/nanjiraSambuli.png" alt="Nanjira Sambuli" class="avatar">
+                        <h3>Nanjira Sambuli (Kenya)</h3>
+                        <p>Nanjira Sambuli, teknoloji ve toplumsal cinsiyet eşitliği konularında önde gelen bir aktivist ve araştırmacıdır. Dünya Ekonomik Forumu'nda dijital cinsiyet açığı üzerine çalışmalar yapmış ve kadınların teknolojiye erişimlerini artırmaya yönelik projelerde yer almıştır. Ayrıca, teknolojinin politika ve toplumsal gelişimdeki rolünü araştırmaktadır.</p>
+                        <button class="profile-btn" onclick="window.open('https://en.wikipedia.org/wiki/Nanjira_Sambuli', '_blank')">Daha Fazla Bilgi</button>
+                    </div>
+        
+                    <!-- İkinci kişi -->
+                    <div class="person">
+                        <img src="img/rebeccaEnonchong.jpg" alt="Rebecca Enonchong" class="avatar">
+                        <h3>Rebecca Enonchong (Kamerun)</h3>
+                        <p>Rebecca Enonchong, teknolojik girişimcilik ve kadınların güçlendirilmesi konularında aktif bir liderdir. AppsTech adlı şirketin kurucusu olan Enonchong, Afrika’daki teknolojik yenilikleri desteklemektedir. Aynı zamanda, kadın girişimcilerin desteklenmesi için çeşitli platformlar oluşturmaktadır.</p>
+                        <button class="profile-btn" onclick="window.open('https://gesda.global/speaker/rebecca-enonchong/', '_blank')">Daha Fazla Bilgi</button>
+                    </div>
+        
+                    <!-- Üçüncü kişi -->
+                    <div class="person">
+                        <img src="img/dorothyGordon.jpg" alt="Dorothy Gordon" class="avatar">
+                        <h3>Dorothy Gordon (Gana)</h3>
+                        <p>Dorothy Gordon, teknoloji ve eğitim alanında uluslararası düzeyde tanınmış bir liderdir. Gana Ulusal Bilgi Teknolojileri Ajansı'nın eski başkanıdır ve eğitimde teknolojinin entegrasyonu konusundaki çalışmalarıyla dikkat çekmiştir. Gordon, Afrika'daki gençlere dijital beceriler kazandırmaya yönelik projeler geliştirmiştir.</p>
+                        <button class="profile-btn" onclick="window.open('https://iite.unesco.org/governing-board/dorothy-gordon/', '_blank')">Daha Fazla Bilgi</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Avrupa Modal -->
+        <div id="modal-av" class="modal">
+            <span class="close-button" onclick="closeModal('modal-av')">&times;</span>
+            <div class="modal-content">
+                <h2>Avrupa'da Teknolojide Öncü Kadınlar</h2>
+                <div class="profile-container">
+                    <!-- İlk kişi -->
+                    <div class="person">
+                        <img src="img/rosalindFranlin.jpg" alt="Rosalind Franklin" class="avatar">
+                        <h3>Rosalind Franklin (İngiltere)</h3>
+                        <p>Rosalind Franklin, DNA'nın yapısını keşfetmede önemli bir rol oynamıştır. X-ışını kristalografisi teknikleri kullanarak DNA'nın ikili sarmal yapısını ortaya koyan ünlü "Fotoğraf 51"i elde etmiştir. Franklin'in çalışmaları, James Watson ve Francis Crick'in DNA modelini geliştirmelerine yardımcı olmuştur.</p>
+                        <button class="profile-btn" onclick="window.open('https://evrimagaci.org/dnanin-goz-ardi-edilen-kahramani-rosalind-franklin-kimdir-365', '_blank')">Daha Fazla Bilgi</button>
+                    </div>
+        
+                    <!-- İkinci kişi -->
+                    <div class="person">
+                        <img src="img/margheritaHack.png" alt="Margherita Hack" class="avatar">
+                        <h3>Margherita Hack (İtalya)</h3>
+                        <p>Margherita Hack, ünlü bir astronom ve bilim iletişimcisidir. İtalyan astronomi dergilerinde ve uluslararası konferanslarda yer almış, evrenin yapı ve evrimi üzerine önemli çalışmalar yapmıştır. Ayrıca bilimsel bilgilendirme ve eğitime büyük katkılar sağlamıştır.</p>
+                        <button class="profile-btn" onclick="window.open('https://en.wikipedia.org/wiki/Margherita_Hack', '_blank')">Daha Fazla Bilgi</button>
+                    </div>
+        
+                    <!-- Üçüncü kişi -->
+                    <div class="person">
+                        <img src="img/liseMeitner.png" alt="Lise Meitner" class="avatar">
+                        <h3>Lise Meitner (Avusturya)</h3>
+                        <p>Lise Meitner, nükleer fisyonun keşfine katkıda bulunan bir fizikçidir. Atom çekirdeğinin parçalanma sürecini anlamada önemli bir rol oynamış ve bu süreçteki çalışmalarını Otto Hahn ile birlikte gerçekleştirmiştir. Meitner, atom enerjisinin kullanımı konusunda da öncüdür.</p>
+                        <button class="profile-btn" onclick="window.open('https://www.herkesebilimteknoloji.com/haberler/fizikuzay/bilim-tarihinin-yalniz-kadini-lise-meitner', '_blank')">Daha Fazla Bilgi</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Asya Modal -->
+        <div id="modal-as" class="modal">
+            <span class="close-button" onclick="closeModal('modal-as')">&times;</span>
+            <div class="modal-content">
+                <h2>Asya'da Teknolojide Öncü Kadınlar</h2>
+                <div class="profile-container">
+                    <!-- İlk kişi -->
+                    <div class="person">
+                        <img src="img/cherWang.webp" alt="Cher Wang" class="avatar">
+                        <h3>Cher Wang (Tayvan)</h3>
+                        <p>Cher Wang, HTC Corporation'ın kurucu ortağı ve CEO'sudur. HTC, özellikle akıllı telefon sektöründe öncü şirketlerden biridir. Wang, mobil cihaz teknolojilerinde devrim yaratmış ve HTC'yi küresel bir teknoloji devine dönüştürmüştür. Ayrıca kadınların teknoloji sektöründe daha fazla yer alması için aktif çalışmalar yapmaktadır.</p>
+                        <button class="profile-btn" onclick="window.open('https://www.committee100.org/members/cherwang/', '_blank')">Daha Fazla Bilgi</button>
+                    </div>
+        
+                    <!-- İkinci kişi -->
+                    <div class="person">
+                        <img src="img/jeanneLim.webp" alt="Jeanne Lim" class="avatar">
+                        <h3>Jeanne Lim (Hong Kong)</h3>
+                        <p>Jeanne Lim, yapay zeka alanında çalışan Sophia the Robot'un yaratıcısı olan Hanson Robotics'in CMO'sudur. Sophia, yapay zekayı insanlarla daha etkileşimli hale getiren robotlardan biridir. Jeanne Lim, yapay zeka ve robotik alanında dünya çapında tanınan bir isimdir.</p>
+                        <button class="profile-btn" onclick="window.open('https://www.hansonrobotics.com/jeanne-lim/', '_blank')">Daha Fazla Bilgi</button>
+                    </div>
+        
+                    <!-- Üçüncü kişi -->
+                    <div class="person">
+                        <img src="img/ayeshaKhanna.jpg" alt="Ayesha Khanna" class="avatar">
+                        <h3>Ayesha Khanna (Singapur)</h3>
+                        <p>Dr. Ayesha Khanna, merkezi Singapur ve San Francisco'da bulunan küresel bir yapay zeka (AI) çözümleri firması olan Addo'nun Kurucu Ortağı ve CEO'sudur. Dünyanın önde gelen şirketlerine ve hükümetlerine yapay zeka, akıllı şehirler ve metaverse konularında stratejik danışmanlık yapmaktadır.</p>
+                        <button class="profile-btn" onclick="window.open('https://www.speakeragency.com.tr/konusmacilar/dr-ayesha-khanna#:~:text=Ayesha%20Khanna%2C%20merkezi%20Singapur%20ve,metaverse%20konular%C4%B1nda%20stratejik%20dan%C4%B1%C5%9Fmanl%C4%B1k%20yapmaktad%C4%B1r.', '_blank')">Daha Fazla Bilgi</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Okyanusya Modal -->
+        <div id="modal-o" class="modal">
+            <span class="close-button" onclick="closeModal('modal-o')">&times;</span>
+            <div class="modal-content">
+                <h2>Okyanusya'da Teknolojide Öncü Kadınlar</h2>
+                <div class="profile-container">
+                    <!-- İlk kişi -->
+                    <div class="person">
+                        <img src="img/maritaCheng.jpg" alt="Marita Cheng" class="avatar">
+                        <h3>Marita Cheng (Avustralya)</h3>
+                        <p>Marita Cheng, Avustralya'nın en tanınmış teknoloji girişimcilerinden biridir. RoboGals adlı girişimiyle, genç kadınları mühendislik ve teknoloji alanlarına yönlendirmeyi amaçlamaktadır. Ayrıca, Aubot adlı bir robotik şirketinin kurucusudur. Aubot, engellilere yardım eden robotlar ve telepresence robotlar geliştiriyor. Cheng, 2012 yılında Avustralya'nın Yılın Kadını ödülünü kazanmıştır.</p>
+                        <button class="profile-btn" onclick="window.open('https://www.maritacheng.com/bio.html', '_blank')">Daha Fazla Bilgi</button>
+                    </div>
+        
+                    <!-- İkinci kişi -->
+                    <div class="person">
+                        <img src="img/michelleSimmons.jpg" alt="Michelle Simmons" class="avatar">
+                        <h3>Michelle Simmons (Avustralya)</h3>
+                        <p>Michelle Simmons, kuantum bilgisayar teknolojisi alanında dünya çapında tanınan bir fizikçi ve araştırmacıdır. Kuantum fiziği ve bilgisayar bilimi arasındaki köprülerden biri olan Simmons, kuantum hesaplama teknolojisinin geliştirilmesine büyük katkı sağlamıştır. Avustralya'nın en prestijli bilim ödüllerinden birini kazanmıştır ve teknoloji dünyasında çığır açan çalışmalar yapmaktadır.</p>
+                        <button class="profile-btn" onclick="window.open('https://research.unsw.edu.au/people/scientia-professor-michelle-yvonne-simmons', '_blank')">Daha Fazla Bilgi</button>
+                    </div>
+        
+                    <!-- Üçüncü kişi -->
+                    <div class="person">
+                        <img src="img/vanessaSorenson.jpeg" alt="Vanessa Sorenson" class="avatar">
+                        <h3>Vanessa Sorenson (Yeni Zelanda)</h3>
+                        <p>Vanessa Sorenson, Microsoft Yeni Zelanda'nın genel müdürüdür. Sorenson, teknolojik inovasyonu ve dijital dönüşümü yönlendiren bir liderdir. Özellikle Yeni Zelanda'da teknoloji sektöründe kadın liderlerin güçlenmesi için yaptığı çalışmalarla tanınmaktadır.</p>
+                        <button class="profile-btn" onclick="window.open('https://news.microsoft.com/en-au/exec/vanessa-sorenson/', '_blank')">Daha Fazla Bilgi</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="basari">
+            <h2 class="heading-secondary">Uluslararası Bilim Dünyasında Başarılara İmza Atmış Türk Kadınları</h2>
+            <div class="col-1-of-2">
+                <div class="composition">
+                    <div class="composition__photo composition__photo--p1">
+                        <img src="img/didemUnat.jpg" alt="Photo 1" id="composition">
+                        <p>Didem Unat, Türkiye'nin önde gelen bilgisayar bilimcilerinden biridir. Özellikle yüksek performanslı hesaplama (HPC), paralel programlama ve GPU programlama alanlarında önemli çalışmalar yapmaktadır. Unat, IEEE gibi prestijli bilimsel kuruluşlardan ödüller kazanmış ve bilgisayar bilimlerinde kadın araştırmacılara yönelik destekleyici çalışmalara da katkıda bulunmuştur. Hem Türkiye'de hem de uluslararası alanda önemli bilimsel projelere imza atmış bir akademisyendir.</p>
+                    </div>
+                    <div class="composition__photo composition__photo--p2">
+                        <img src="img/canan-dagdeviren.jpg" alt="Photo 2" id="composition">
+                        <p>Canan Dağdeviren, Türk bilim insanı ve mühendisidir. Giyilebilir sağlık teknolojileri ve biyomedikal mühendislik alanlarında yaptığı öncü çalışmalarla tanınır. Dağdeviren, özellikle esnek ve giyilebilir elektronik cihazlar üzerine çalışmaktadır. Harvard Üniversitesi’nde Genç Akademi üyeliğine kabul edilen ilk Türk bilim insanı olan Dağdeviren, aynı zamanda MIT'de (Massachusetts Institute of Technology) görev yapmaktadır. Pankreas, karaciğer ve mide kanserini erken teşhis etmeyi amaçlayan giyilebilir cihazlar geliştirmiştir. Dağdeviren’in icatlarından biri, kalp ritmini elektrik enerjisine dönüştürebilen esnek bir cihazdır.</p>
+                    </div>
+                    <div class="composition__photo composition__photo--p3">
+                        <img src="img/bernaSözen.webp" alt="Photo 3" id="composition">
+                        <p>Berna Sözen, Türk bilim insanı ve embriyoloji alanında önemli çalışmalar yapan bir araştırmacıdır. Oxford Üniversitesi'nde çalışmalarını sürdüren Sözen, özellikle yapay embriyo modelleri üzerinde yaptığı araştırmalarla tanınmaktadır. Bu modeller, erken insan gelişiminin daha iyi anlaşılmasını sağlamakta ve üreme biyolojisi ile ilgili önemli bilgiler sunmaktadır. Sözen'in araştırmaları, kök hücreler kullanarak fare embriyolarının gelişim süreçlerini laboratuvar ortamında taklit etmeye yöneliktir. Bu çalışmalar, üreme sağlığı ve doğumla ilgili hastalıkların daha iyi anlaşılmasına katkıda bulunurken, etik sınırları aşmadan insan gelişimini incelemeyi mümkün kılmaktadır.</p>
+                    </div>
+                    <div class="composition__photo composition__photo--p4">
+                        <img src="img/FeryalOzel.jpg" alt="Photo 4" id="composition">
+                        <p>Feryal Özel, Türk astrofizikçi ve akademisyendir. Kara delikler, nötron yıldızları ve genel görelilik konularındaki çalışmalarıyla dünya çapında tanınmıştır. Özel, özellikle kara deliklerin yapısını ve bu kozmik fenomenlerin etrafındaki olay ufku (event horizon) hakkında yaptığı araştırmalarla bilinir. Feryal Özel, 2019 yılında çekilen ilk kara delik fotoğrafı projesinde (Event Horizon Telescope) önemli bir rol oynamıştır. Bu uluslararası projenin parçası olarak, kara deliklerin görsel kanıtlarının elde edilmesine katkı sağlamıştır. Aynı zamanda bilimsel çalışmalarıyla pek çok ödül kazanmış ve dünyanın önde gelen astrofizikçilerinden biri olarak kabul edilmiştir.</p>
+                    </div>
+                    <div class="composition__photo composition__photo--p5">
+                        <img src="img/ozlemTureci.jpg" alt="Photo 5" id="composition">
+                        <p>Özlem Türeci, Türk-Alman bilim insanı ve tıp doktorudur. Biontech şirketinin kurucu ortağı ve baş tıbbi sorumlusudur. Özlem Türeci, özellikle kanser ve bulaşıcı hastalıklar için immünoterapi yöntemleri geliştirme konusunda öncü çalışmalara imza atmıştır. Eşi Uğur Şahin ile birlikte, COVID-19 pandemisi sırasında dünyada büyük yankı uyandıran ilk mRNA bazlı COVID-19 aşısını geliştirmiştir. Biontech'in geliştirdiği bu aşı, pandeminin kontrol altına alınmasında büyük bir adım olmuştur ve dünya genelinde milyonlarca insanın aşılanmasına katkı sağlamıştır.</p>
+                    </div>
+                    <div class="composition__photo composition__photo--p6">
+                        <img src="img/eceKamar.jpg" alt="Photo 6" id="composition">
+                        <p>Dr. Ece Kamar, yapay zeka ve makine öğrenmesi alanında çalışan bir Türk bilim insanıdır. Kamar, Microsoft Research'te çalışmakta ve yapay zekanın etik kullanımı, insan-makine etkileşimi ve algoritmik karar verme süreçleri üzerine araştırmalar yapmaktadır. Dünya çapında yapay zeka araştırmalarına yön veren önemli bir bilim insanıdır ve Türkiye'yi global teknoloji sahnesinde temsil etmektedir. Aynı zamanda Ece Kamar, yapay zeka sistemlerinin daha şeffaf, adil ve hesap verebilir olmasına yönelik çalışmalarla tanınmaktadır. Yapay zekanın daha güvenilir ve adil olması için sorumluluk çerçevesinde geliştirilmesi gerektiğini savunmaktadır.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-3" id="ilkler">
+            <div class="box">
+                <h2>İlk Kadın Kimyacı: Prof. Dr. Remziye Hisar (1902-1992)</h2>
+                <p>Fransa Sorbonne Üniversitesi’nden mezun olan ilk Türk kadınıdır. Türkiye Cumhuriyeti’nin ilk kadın kimyacısı olarak kabul edilmektedir.</p>
+            </div>
+            <div class="box">
+                <h2>İlk Kadın Doktor: Safiye Ali (1894-1952)</h2>
+                <p>Balkan Savaşı sırasında cepheden gelen birçok yaralıyı gördükten sonra doktor olmaya karar vermiştir. Bu isteğini gerçekleştirmesi ise oldukça zordur çünkü o dönemde bir kadının tıp okuması imkansızdır. Maarif Vekili Şükrü Bey’in yardımları ile tıp eğitimi almak için Almanya’ya gitmiştir.</p>
+            </div>
+            <div class="box">
+                <h2>İlk Kadın Avukat: Süreyya Ağaoğlu (1903-1989)</h2>
+                <p>Tarihimizin ilk kadın avukatıdır. Ayrıca Hür Fikirleri Yayma Derneği ve Çocuk Dostları Derneği’nin kurucusudur. Milletlerarası Hukukçular Komisyonu üyesidir. Milletlerarası Barolar Birliği Yönetim Kurulu İdari Heyet Üyesi’dir. Ve bir kadın hakları savunucusudur. Tarihimizde en cesur kadın entelektüel olarak yer almıştır. 58 yıl avukatlık yapmıştır.</p>
+            </div>
+            <div class="box">
+                <h2>İlk Kadın Heykeltraş: Sabiha Bengütaş (1904-1992)</h2>
+                <p>Güzel sanatlara ilgisi fazla olan Sabiha Bengütaş, 16 yaşında Sanayi-i Nefise Mektebi’nin resim bölümüne kaydolmuştur. Bu sırada antik bir büstü kopya eden Bengütaş, öğretmeninin dikkatini çekmiş, okulun heykel bölümüne alınan ilk kız öğrenci olmuştur. 1938 yılında Atatürk ve İnönü için yapılan heykel yarışmasında birinci olmuştur.</p>
+            </div>
+            <div class="box">
+                <h2>İlk Kadın Jet Pilotu: Leman Bozkurt Altınçekiç (1932-2001)</h2>
+                <p>NATO’nun da ilk ve uzun zaman boyunca tek kadın jet pilotu olmuştur. Kasım 1958’de jet pilotu brövesini takan Altınçekiç, 9 yıl F-84 ve T-33 jet uçaklarında uçmuştur. Sonraki yıllarda Hava Kuvvetleri’nin karargâh hizmetlerinde çalışmış, kıdemli Albay rütbesiyle Hava Kuvvetleri’nden emekli olmuştur.</p>
+            </div>
+            <div class="box">
+                <h2>İlk Kadın Emniyet Müdürü: Feriha Sanerk (1923-2010)</h2>
+                <p>Ankara Üniversitesi Siyasal Bilgiler Fakültesi’ne ilk kız öğrenci olarak girmiştir. Kaymakamlık kursunu bitirmesine rağmen cinsiyeti nedeniyle kaymakam olma isteği reddedilmiş, bunun üzerine Emniyet Genel Müdürlüğü’ne başvurmuştur. 1953’te Emniyet Müdürü rütbesine yükselmiştir. Fakat yine cinsiyeti nedeniyle ataması gerçekleştirilmemiştir.</p>
+            </div>
+            <div class="box">
+                <h2>İlk Kadın Savaş Muhabiri ve Fotoğrafçı: Semiha Es (1912-2012)</h2>
+                <p>Celal Bayar’ın cumhurbaşkanlığı döneminde toplanan Bakanlar Kurulu, Kore Savaşı’na katılması için 4500 silahlı birliği Birleşmiş Milletler emrine vermiştir. Hürriyet Gazetesi savaşın görüntülenmesi için Semiha Es’i görevlendirmiştir. Türkler 11 Kasım 1950 tarihli gazetede, savaşı Semiha Es’in objektifinden öğrenmiştir.</p>
+            </div>
+            <div class="box">
+                <h2>İlk Kadın Pilotlardan: Sabiha Gökçen (1913-2001)</h2>
+                <p>Atatürk’ün manevi kızı Sabiha Hanım, Türkiye’nin ilk kadın pilotlarından olmakla birlikte dünyanın ilk kadın savaş uçağı pilotudur. Türk kadınının her alanda başarılı olabileceğini göstermek için Atatürk’ün kendisini yetiştirdiği bilinmektedir. Havacılığa başlayan Sabiha Gökçen, Sovyetler Birliği’nde Yüksek Planör Okulu’nu bitirmiş ve planör öğretmenliği yapmıştır.</p>
+            </div>
+        </div>
+
+        <div class="carousel-container" id="sözler">
+            <div class="carousel">
+                <div class="slide">
+                    <div class="comment-box">
+                        <blockquote>
+                            <i class="fas fa-quote-left quote-icon"></i>
+                            <p>"Günün sonunda, yapabileceğimizi düşündüğümüzden çok daha fazlasına dayanabiliriz."</p>
+                            <p>- Frida Kahlo</p>
+                        </blockquote>
+                    </div>
+                    <div class="comment-box">
+                        <blockquote>
+                            <i class="fas fa-quote-left quote-icon"></i>
+                            <p>"Bir kadın her seferinde kendi adına ayağa kalktığında, aslında bilmeden tüm kadınları savunur."</p>
+                            <p>- Maya Angelou</p>
+                        </blockquote>
+                    </div>
+                    <div class="comment-box">
+                        <blockquote>
+                            <i class="fas fa-quote-left quote-icon"></i>
+                            <p>"Ne düşündüğünüze güvenmelisiniz. Kendinizi parçalayıp herkesi memnun etmeye çalışırsanız, yapamazsınız. Biraz dinlemeli, sonra bunu bir kenara bırakmalı ve yaptığınız şeyin önemli olduğunu bilmelisiniz."</p>
+                            <p>- Annie Leibovitz</p>
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="comment-box">
+                        <blockquote>
+                            <i class="fas fa-quote-left quote-icon"></i>
+                            <p>"En cesur hareket, kendin için düşünmektir. Yüksek bir sesle."</p>
+                            <p>- Coco Chanel</p>
+                        </blockquote>
+                    </div>
+                    <div class="comment-box">
+                        <blockquote>
+                            <i class="fas fa-quote-left quote-icon"></i>
+                            <p>"İnsanlar konusunda daha az, fikirler konusunda daha çok meraklı olun."</p>
+                            <p>- Marie Curie</p>
+                        </blockquote>
+                    </div>
+                    <div class="comment-box">
+                        <blockquote>
+                            <i class="fas fa-quote-left quote-icon"></i>
+                            <p>"En zoru harekete geçme kararıdır, geri kalanı ise sadece kararlılık meselesidir."</p>
+                            <p>- Amelia Earhart</p>
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="comment-box">
+                        <blockquote>
+                            <i class="fas fa-quote-left quote-icon"></i>
+                            <p>"Soru kimin bana izin vereceği değil, kimin beni durduracağıdır."</p>
+                            <p>- Ayn Rand</p>
+                        </blockquote>
+                    </div>
+                    <div class="comment-box">
+                        <blockquote>
+                            <i class="fas fa-quote-left quote-icon"></i>
+                            <p>"Çoğu zaman insanlar güçlerinden, aslında güçleri olmadığını düşünerek vazgeçerler."</p>
+                            <p>- Alice Walker</p>
+                        </blockquote>
+                    </div>
+                    <div class="comment-box">
+                        <blockquote>
+                            <i class="fas fa-quote-left quote-icon"></i>
+                            <p>"Siyasette bir şeyi söyletmek istiyorsanız bir erkekten isteyin. Bir şeyi yaptırmak istiyorsanız, bir kadından isteyin."</p>
+                            <p>- Margaret Thatcher</p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <button class="prev-btn" id="oklar">&#10094;</button>
+            <button class="next-btn" id="oklar">&#10095;</button>
+        </div>
+        
+        
+        <section class="stats-container" id="oran">
+            <div class="stat-box">
+                <h2>%32,4</h2>
+                <p>Türkiye'de Kadınların Çalışma Oranı</p>
+            </div>
+            <div class="stat-box">
+                <h2>%66,0</h2>
+                <p>Türkiye'de Erkeklerin Çalışma Oranı</p>
+            </div>
+            <div class="stat-box">
+                <h2>%45,6</h2>
+                <p>Dünyada Kadınların Çalışma Oranı</p>
+            </div>
+            <div class="stat-box">
+                <h2>%69,2</h2>
+                <p>Dünyada Erkeklerin Çalışma Oranı</p>
+            </div>
+        </section>
+        
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h2>About Us</h2>
+                <p>
+                    Teknoloji sektöründe cinsiyet eşitliğini teşvik etmeye adanmış bir projedir. Misyonumuz kadınları güçlendirmek ve teknolojideki cinsiyet farkını kapatmaktır.
+                </p>
+            </div>
+    
+            <div class="footer-section contact">
+                <h2>Contact Us</h2>
+                <p>Email: bus.akblt@outlook.com</p>
+                <p>Phone: </p>
+                <p>Address: </p>
+            </div>
+    
+            <div class="footer-section social">
+                <h2>Follow Us</h2>
+                <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a>
+                <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+                <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            &copy; 2024 | Designed by Busenur Akbulut
+        </div>
+    </footer>
+    
+    <script src="app.js"></script>
+</body>
+</html>

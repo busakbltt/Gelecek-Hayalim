@@ -1,0 +1,650 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #777;
+}
+
+.container{
+    height: 700vh;
+    width: 100%;
+    background-color: #dae0f6;
+}
+
+/* Hamburger menu button */
+.menu-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: white;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.menu-icon {
+    width: 30px;
+    height: 2px;
+    background-color: rgb(65, 61, 61);
+    position: relative;
+    transition: all 0.3s;
+}
+
+.menu-icon::before,
+.menu-icon::after {
+    content: '';
+    width: 30px;
+    height: 2px;
+    background-color: rgb(65, 61, 61);
+    position: absolute;
+    transition: all 0.3s;
+}
+
+.menu-icon::before {
+    top: -10px;
+}
+
+.menu-icon::after {
+    top: 10px;
+}
+
+.menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(#849ed7, #274483) ;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+.menu-list {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.menu-list li {
+    color: white;
+    margin: 20px 0;
+    cursor: pointer;
+    padding: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 2.5rem;
+}
+
+.menu-list li:hover {
+    background-color: white;
+    transform: translateX(1rem);
+    background-image: linear-gradient(120deg, transparent 0%, transparent 50%, white 50%);
+    transition: all .4s;
+}
+
+.menu-list li a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu-list li a:visited {
+    color: white;
+}
+
+.menu-list li a:hover,
+.menu-list li a:active {
+    color: #274483;
+}
+
+.header{
+    height: 95vh;
+    background-image: linear-gradient(
+        to right bottom, 
+        #161c4dc7, 
+        #13154ec7),  url(img/kadin-haklari-nelerdir.jpg);
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+
+.logo-box{
+    position: fixed;
+    top: 30px;
+    left: 15px;
+}
+
+.text-box{
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    transform: translate(-50%, 50%);
+}
+
+.heading-primary{
+    color: #fff;
+    text-transform: uppercase;
+    backface-visibility: hidden;
+}
+
+.heading-primary-main{
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 35px;
+
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+}
+
+.heading-primary-sub{
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 35px;
+
+    animation-name: moveInRight;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    80%{
+        transform: translateX(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    80%{
+        transform: translateX(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+.heading-secondary{
+    text-align: center;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: .1rem;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+    color: #2b1462;
+    margin-top: 90px;
+}
+
+.heading-secondary:hover {
+    -webkit-transform: skewY(2deg) skewX(15deg) scale(1.1);
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+h2{
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+    color: #314b34;
+}
+
+.world-map {
+    position: relative;
+    left: 95px;
+    height: 1014px;
+    width: 1600px;
+    z-index: 1;
+}
+
+.zoom-preview {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    padding: 5px;
+    display: none;
+    z-index: 10;
+    height: auto;
+    cursor: pointer;
+}
+
+.zoomed-map {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.blurred {
+    filter: blur(5px);
+}
+
+ /* Modal için CSS */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 20;
+    left: 50%;
+    top: 50%;
+    width: 1600px;
+    height: 800px;
+    transform: translate(-50%, -50%);
+    background-image:  linear-gradient(
+        to right bottom, 
+        #e2edefe9, 
+        #acbbcef0), url(img/arkaplan-modal.jpg);
+    background-size: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 100;
+}
+
+.modal-content {
+    text-align: center;
+    color: black;
+}
+
+/* Yuvarlak profil resimleri */
+.avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+/* Profil container */
+.profile-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+/* Kişi kartı */
+.person {
+    text-align: center;
+    width: 350px;
+    height: 600px;
+    color: rgb(245, 244, 238);
+    background-color: #455545e2;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.person h3 {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.person p {
+    font-size: 14px;
+    color: rgb(246, 245, 240);
+}
+
+.profile-btn {
+    background-color: #498d7f;
+    color: white; 
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 30px;
+    font-size: 16px;
+    border-radius: 5px;
+    height: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.profile-btn:hover {
+    background-color: #b2afcd; 
+}
+
+
+.close-button {
+    cursor: pointer;
+    font-size: 50px;
+    position: absolute;
+    right: 25px;
+    top: 10px;
+}
+
+.blurred-background {
+    filter: blur(5px);
+    pointer-events: none; /* Arka plana tıklanmayı engelle */
+}
+
+.composition {
+    position: relative; 
+    margin-top: 100px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.composition__photo {
+    width: 35%;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+    border-radius: 2px;
+    position: absolute;
+    z-index: 10;
+    transition: all .2s;
+    outline-offset: 2rem; 
+    padding: 20px;
+}
+.composition__photo--p1 {
+    left: 5%;
+    top: -2rem; 
+    background-color: #161616;
+    color: white;
+}
+.composition__photo--p2 {
+    right: 5%;
+    top: 2rem; 
+    background-color: #56655F;
+    color: white;
+}
+.composition__photo--p3 {
+    left: 30%;
+    top: 10rem; 
+    background-color: #3A3535;
+    color: white;
+}
+.composition__photo--p4{
+    left: 2%;
+    top: 40rem; 
+    background-color: #1B1714;
+    color: white;
+}
+.composition__photo--p5{
+    left: 25%;
+    top: 50rem; 
+    background-color: #3F3F63;
+    color: white;
+}
+.composition__photo--p6{
+    left: 55%;
+    top: 45rem; 
+    background-color: #849F41;
+    color: white;
+}
+.composition__photo:hover {
+    outline: 1.5rem solid #3fd2df;
+    transform: scale(1.1) translateY(-0.5rem);
+    box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+    z-index: 20; 
+}
+.composition:hover .composition__photo:not(:hover) {
+    transform: scale(0.95); 
+}
+
+#composition{
+    position: relative;
+    text-align: center;
+    width: 400px;
+}
+
+.section-3{
+    padding: 20rem 0;
+    height: 120vh;
+    background-image: url(img/pexels-felixmittermeier-956981.jpg);
+    transform: skewY(-7deg);
+    margin-top: 115rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    padding-top: 110px;
+    padding-bottom: 1px;
+}
+.section-3 > * {
+    transform: skewY(7deg); 
+}
+
+.box {
+    background-image: linear-gradient(
+        to right bottom, 
+        #d8f2f3c7, 
+        #dbeae9c7), url(img/güçlü-kadın.png);
+    border: 1px solid #ddd;
+    padding:10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    width: 400px;
+    height: 400px;
+}
+    
+.box h2 {
+    margin-bottom: 10px;
+    font-size: 25px;
+    color: #071B33;
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+}
+    
+.box p {
+    margin-bottom: 20px;
+    font-size: 17px;
+    color: #2d3d51;
+    font-style: italic;
+    font-weight: bold;
+    text-align: justify;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    margin: auto;
+    margin-top: 15em;
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    display: flex;
+    justify-content: space-around;
+    min-width: 100%;
+}
+
+.comment-box {
+    background-color: #FEF7F4;
+    padding: 50px;
+    margin-top: 50px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 25%;
+}
+
+blockquote {
+    font-style: italic;
+    color: #7a7a7a;
+    margin: 0;
+}
+
+#oklar {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #B07B69;
+    color: white;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.prev-btn {
+    left: 20px;
+}
+
+.next-btn {
+    right: 20px;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.quote-icon {
+    font-size: 40px;
+    color: #b07b69;
+    margin-bottom: 10px;
+}
+
+
+.stats-container {
+    display: flex;
+    justify-content: space-evenly; 
+    align-items: center;
+    padding: 50px 0;
+    margin-top: 95px;
+    height: 350px;
+    background-color: #fef7f4;
+}
+
+.stat-box {
+    text-align: center;
+    padding: 20px;
+    border-right: 1px solid #e0e0e0;
+}
+
+.stat-box:last-child {
+    border-right: none; 
+}
+
+.stat-box h2 {
+    font-size: 48px;
+    color: #1e2952;
+    margin-bottom: 10px;
+}
+
+.stat-box p {
+    font-size: 20px;
+    color: #6c757d;
+}
+
+/* FOOTER */
+footer {
+    background-color: #191D4E;
+    color: #ecf0f1;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex-basis: 30%;
+    margin: 20px 0;
+}
+
+.footer-section h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #ecf0f1;
+}
+
+.footer-section p {
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.footer-section a {
+    display: block;
+    margin: 10px 0;
+    color: #ecf0f1;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: #f39c12;
+}
+
+.footer-section .social a {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #34495e;
+    color: #ecf0f1;
+}
+
+.footer-section .social a:hover {
+    background-color: #f39c12;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-section {
+        flex-basis: 100%;
+    }
+}
+
